@@ -1,6 +1,6 @@
 import { describe, test, expect } from "@jest/globals";
 import AbstractFactoryPattern from '../src/creational/AbstractFactoryPattern'
-describe('factory', () => {
+describe('abstract factory', () => {
     test('should return ConcreteProductA', () => {
         const product1 = AbstractFactoryPattern.create('concretea')
         expect(product1.name).toBe('ConcreteProductA')
