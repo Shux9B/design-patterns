@@ -1,7 +1,7 @@
 import { describe, test, expect } from "@jest/globals";
 import Certi from '../src/creational/Prototype'
 describe('Prototype', () => {
-    test('should return [a,b,c]', () => {
+    test('should return same refer', () => {
         const cer1 = new Certi('張三')
         expect(cer1.grant()).toBe('張三同学：在2016学年第一学期中表现优秀，被评为三好学生')
         const cer2 = cer1.clone()
