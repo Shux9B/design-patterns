@@ -1,7 +1,7 @@
 interface ICommand {
     execute(): string
 }
-class Invoker {
+export class Invoker {
     #commands: {[id: string]: ICommand}
     constructor () {
         this.#commands = {}
@@ -17,15 +17,11 @@ class Invoker {
         }
     }
 }
-class Receiver {
-    runCommand1 () {
-        return 'executing command 1'
-    }
-    runCommand2 () {
-        return 'executing command 2'
-    }
+export class Receiver {
+    runCommand1 = jest.fn();
+    runCommand2 = jest.fn();
 }
-class Command1 implements ICommand {
+export class Command1 implements ICommand {
     #receiver:Receiver
     constructor (receiver: Receiver) {
         this.#receiver = receiver
@@ -34,7 +30,7 @@ class Command1 implements ICommand {
         return this.#receiver.runCommand1()
     }
 }
-class Command2 implements ICommand {
+export class Command2 implements ICommand {
     #receiver: Receiver
     constructor(receiver: Receiver) {
         this.#receiver = receiver
