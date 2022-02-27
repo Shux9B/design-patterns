@@ -10,7 +10,6 @@ class Numeral implements IAbstractExpression {
     interPret(): number {
         return this.value
     }
-
 }
 class Add implements IAbstractExpression {
     left: IAbstractExpression
